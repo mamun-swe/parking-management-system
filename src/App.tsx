@@ -5,6 +5,7 @@ import { VehicleIndex } from "pages/vehicle";
 import { VehicleStore } from "pages/vehicle/store";
 import { VehicleEdit } from "pages/vehicle/edit";
 import { FourOFour } from "pages/404";
+import { ToastContainer } from "react-toastify";
 
 const App: React.FC = (): JSX.Element => {
   const mainRoutes = {
@@ -21,7 +22,12 @@ const App: React.FC = (): JSX.Element => {
   };
 
   const routing = useRoutes([mainRoutes]);
-  return <>{routing}</>;
+  return (
+    <>
+      {routing} 
+      <ToastContainer />
+    </>
+  );
 };
 
 export default App;

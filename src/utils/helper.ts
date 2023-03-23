@@ -9,3 +9,15 @@ export const isActivePath = (current_url_path: string, route_path: string) => {
   return false;
 };
 
+/* get vehicles */
+export const getVehicles = () => {
+  const result = localStorage.getItem("vehicles");
+  const data = result ? JSON.parse(result) : null;
+  return data;
+};
+
+/* set vehicles */
+export const setVehicle = (data: any) => {
+  const result = localStorage.setItem("vehicles", JSON.stringify(data));
+  return result;
+};
